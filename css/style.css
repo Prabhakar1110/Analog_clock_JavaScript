@@ -1,0 +1,162 @@
+html {
+    font-size: 10px;
+}
+:root {
+    --theme_color:white;
+    --container_bg:rgba(128, 128, 128, 0.2);
+    --container_width:35rem;
+    --clock_border:1.5rem;
+    --clock_width:30rem; /*Including border*/
+    --number_indicator_width:2rem;
+    --number_indicator_height:0.3rem;
+    --number_indicator_color:var(--theme_color);
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.headline_div {
+    width: var(--container_width);
+    margin: 50px auto 0 auto;
+    padding: 10px;
+    text-align: center;
+    background-color: var(--container_bg);
+    border-radius: 10px 10px 0 0;
+}
+.container {
+    width: var(--container_width);
+    height: var(--container_width);
+    margin: auto;
+    background-image: url("../img/clock_bg.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.my_clock {
+    width: var(--clock_width);
+    height: var(--clock_width);
+    border: var(--clock_border) solid var(--theme_color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50%;
+}
+.digital_clock_div {
+    width: var(--container_width);
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: var(--container_bg);
+    border-radius: 0 0 10px 10px;
+}
+.hand {
+    position: absolute;
+    background-color: white;
+}
+.hour_hand {
+    width: 5px;
+    height: 70px;
+    background: linear-gradient(blue,white);
+    bottom: 50%;
+    transform-origin: bottom center;
+}
+.miniute_hand {
+    width: 2px;
+    height:120px;
+    background: linear-gradient(green,white);
+    bottom: 50%;
+    transform-origin: bottom center;
+}
+.second_hand {
+    width: 1px;
+    height: 100px;
+    background: linear-gradient(red,white);
+    bottom: 50%;
+    transform-origin: bottom center;
+}
+.center_dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--theme_color);
+}
+.brand {
+    position: absolute;
+    bottom: 17%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.6rem;
+}
+/*Number Indicators*/ 
+/*Only for numbers: 3, 6, 9, 12*/
+.main_indicator {
+    position: absolute;
+    font-size:3rem;
+    color: var(--theme_color);
+}
+.indicator_12 {
+    top: 0;
+}
+.indicator_3 {
+    right:0;
+}
+.indicator_6 {
+    bottom: 0;
+}
+.indicator_9 {
+    left: 2px;
+}
+
+/*For remaining numbers - lines*/
+.indicator {
+    width: var(--number_indicator_width);
+    height: var(--number_indicator_height);
+    background-color: var(--number_indicator_color);
+    position: absolute;
+}
+.indicator_1 {
+    transform: rotate(120deg);
+    top: 24px;
+    right: 61px;
+}
+.indicator_2 {
+    transform: rotate(150deg);
+    top: 70px;
+    right: 15px;
+}
+.indicator_4 {
+    transform: rotate(210deg);
+    bottom: 70px;
+    right: 15px;
+}
+.indicator_5 {
+    transform: rotate(240deg);
+    bottom: 24px;
+    right: 61px;
+}
+.indicator_7 {
+    transform: rotate(300deg);
+    bottom: 24px;
+    left: 61px;
+}
+.indicator_8 {
+    transform: rotate(330deg);
+    bottom: 70px;
+    left: 15px;
+}
+.indicator_10 {
+    transform: rotate(30deg);
+    top: 70px;
+    left: 15px;
+}
+.indicator_11 {
+    transform: rotate(60deg);
+    top: 24px;
+    left: 61px;
+}
